@@ -1,9 +1,12 @@
 <template>
   <div>
-    <h3>Username:<input type="text" name="Username" id="" /></h3>
-    <h3>Password:<input type="text" name="Username" id="" /></h3>
-    <button>Login</button>
-    <router-link to="/SignUp">Sign Up</router-link>
+    <h3>Email:<input type="text" name="" id="" /></h3>
+    <h3>First Name:<input type="text" name="" id="" /></h3>
+    <h3>Last Name:<input type="text" name="" id="" /></h3>
+    <h3>img_url:<input type="text" name="" id="" /></h3>
+    <h3>UserName:<input type="text" name="" id="" /></h3>
+    <h3>Password:<input type="text" name="" id="" /></h3>
+    <button>Sign Up</button>
   </div>
 </template>
 
@@ -11,10 +14,11 @@
 import axios from "axios";
 export default {
   methods: {
-    User_login() {
+    User_signup() {
       axios
         .request({
           url: `https://innotechfoodie.ml/api/client`,
+          methods: "POST",
           headers: {
             "https://innotechfoodie.ml/api/client": "yLAQeEigreLkBVEovDJJ",
           },
