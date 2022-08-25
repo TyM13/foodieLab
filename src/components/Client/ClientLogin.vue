@@ -8,25 +8,25 @@
 </template>
 
 <script>
-import axios from "axios";
+// import axios from "axios";
 export default {
-  methods: {
-    User_login() {
-      axios
-        .request({
-          url: `https://innotechfoodie.ml/api/client`,
-          headers: {
-            "https://innotechfoodie.ml/api/client": "yLAQeEigreLkBVEovDJJ",
-          },
-        })
-        .then((response) => {
-          response;
-        })
-        .catch((error) => {
-          error;
-        });
-    },
-  },
+  // methods: {
+  //   User_login() {
+  //     axios
+  //       .request({
+  //         url: `https://innotechfoodie.ml/api/client`,
+  //         headers: {
+  //           "https://innotechfoodie.ml/api/client": "yLAQeEigreLkBVEovDJJ",
+  //         },
+  //       })
+  //       .then((response) => {
+  //         response;
+  //       })
+  //       .catch((error) => {
+  //         error;
+  //       });
+  //   },
+  // },
 };
 </script>
 

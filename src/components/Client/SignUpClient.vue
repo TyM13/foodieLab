@@ -3,10 +3,10 @@
     <h3>Email:<input type="text" name="" id="" /></h3>
     <h3>First Name:<input type="text" name="" id="" /></h3>
     <h3>Last Name:<input type="text" name="" id="" /></h3>
-    <h3>img_url:<input type="text" name="" id="" /></h3>
+    <h3>img_url:<input type="url" name="" id="" /></h3>
     <h3>UserName:<input type="text" name="" id="" /></h3>
     <h3>Password:<input type="text" name="" id="" /></h3>
-    <button>Sign Up</button>
+    <button @click="user_signup">Sign Up</button>
   </div>
 </template>
 
@@ -36,3 +36,4 @@ export default {
 
 <style scoped>
 </style>
+

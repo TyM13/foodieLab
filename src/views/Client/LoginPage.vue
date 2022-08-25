@@ -7,7 +7,7 @@
 <script>
 import ClientLogin from "@/components/Client/ClientLogin.vue";
 export default {
-  methods: {
+  components: {
     ClientLogin,
   },
 };
