@@ -47,6 +47,7 @@ export default {
           cookies.set(`token`, response[`data`][`token`]);
           cookies.set(`client_id`, response[`data`][`client_id`]);
           response;
+          this.$router.push(`@/views/LoginPage.vue`);
         })
         .catch((error) => {
           error;
