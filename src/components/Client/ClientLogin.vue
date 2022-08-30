@@ -11,7 +11,7 @@
 
 <script>
 import axios from "axios";
-
+import cookies from "vue-cookies";
 export default {
   methods: {
     user_login() {
@@ -28,8 +28,10 @@ export default {
           },
         })
         .then((response) => {
+          cookies.set(`token`, response[`data`][`token`]);
+          cookies.set(`client_id`, response[`data`][`client_id`]);
           response;
-          this.$router.push(`@/views/ProfilePage.vue`);
+          this.$router.push(`/ProfilePage`);
         })
         .catch((error) => {
           error;
