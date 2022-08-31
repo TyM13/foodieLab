@@ -6,6 +6,7 @@
     </h3>
     <button @click="user_login">Login</button>
     <router-link to="/SignUp">Sign Up</router-link>
+    <router-link to="/RestaurantSignUp">Restaurant Sign Up</router-link>
   </div>
 </template>
 
@@ -31,7 +32,7 @@ export default {
           cookies.set(`token`, response[`data`][`token`]);
           cookies.set(`client_id`, response[`data`][`client_id`]);
           response;
-          this.$router.push(`/ProfilePage`);
+          this.$router.push(`/ClientProfilePage`);
         })
         .catch((error) => {
           error;

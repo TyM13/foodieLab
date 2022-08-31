@@ -3,7 +3,12 @@
     <section>
       <h3>
         Email:
-        <input type="text" name="" id="" placeholder="example@hotmail.ca" />
+        <input
+          ref="client_email"
+          type="text"
+          name=""
+          placeholder="example@hotmail.ca"
+        />
       </h3>
       <h3>First Name: <input type="text" name="" id="" /></h3>
       <h3>Last Name: <input type="text" name="" id="" /></h3>
@@ -12,6 +17,7 @@
       <h3>Password: <input type="text" name="" id="" /></h3>
       <button @click="update_changes">Save Changes</button>
     </section>
+    <router-link to="/DeleteProfile">Delete Account</router-link>
   </div>
 </template>
 
@@ -19,23 +25,20 @@
 import axios from "axios";
 import cookies from "vue-cookies";
 export default {
-  mounted() {},
-  data() {
-    return {
-      client_token: cookies.get(`token`),
-      // client_id_num: cookies.get(`client_id`),
-    };
-  },
-
   methods: {
     update_changes() {
+      let token_num = cookies.get(`token`);
       axios
         .request({
           url: `https://innotechfoodie.ml/api/client`,
+          method: "PATCH",
           headers: {
             "x-api-key": `yLAQeEigreLkBVEovDJJ`,
-            // client_id: `client_id_num`,
-            token: `client_token`,
+
+            token: token_num,
+          },
+          data: {
+            email: this.$refs[`client_email`][`value`],
           },
         })
         .then((response) => {
