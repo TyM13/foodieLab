@@ -10,27 +10,31 @@
 import axios from "axios";
 import cookies from "vue-cookies";
 export default {
-  restaurant_login() {
-    axios
-      .request({
-        url: "https://innotechfoodie.ml/api/restaurant-login",
-        headers: {
-          "x-api-key": "yLAQeEigreLkBVEovDJJ",
-        },
-        data: {
-          email: this.$refs[`restaurant_email`][`value`],
-          password: this.$refs[`restaurant_password`][`value`],
-        },
-      })
-      .then((response) => {
-        cookies.set(`Restaurant_token`, response[`data`][`token`]);
-        cookies.set(`Restaurant_id`, response[`data`][`Restaurant_id`]);
-        response;
-        // this.$router.push(`/RestaurantLogin`);
-      })
-      .catch((error) => {
-        error;
-      });
+  methods: {
+    restaurant_login(details) {
+      axios
+        .request({
+          url: "https://innotechfoodie.ml/api/restaurant-login",
+          method: "POST",
+          headers: {
+            "x-api-key": "yLAQeEigreLkBVEovDJJ",
+          },
+          data: {
+            email: this.$refs[`restaurant_email`][`value`],
+            password: this.$refs[`restaurant_password`][`value`],
+          },
+        })
+        .then((response) => {
+          details;
+          cookies.set(`Restaurant_token`, response[`data`][`token`]);
+          cookies.set(`Restaurant_id`, response[`data`][`restaurantId`]);
+          response;
+          this.$router.push(`/RestaurantProfilePage`);
+        })
+        .catch((error) => {
+          error;
+        });
+    },
   },
 };
 </script>

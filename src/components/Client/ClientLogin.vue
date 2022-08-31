@@ -5,8 +5,13 @@
       Password:<input ref="usr_password" type="text" name="Username" id="" />
     </h3>
     <button @click="user_login">Login</button>
-    <router-link to="/SignUp">Sign Up</router-link>
-    <router-link to="/RestaurantSignUp">Restaurant Sign Up</router-link>
+    <nav>
+      <router-link to="/SignUp">Sign Up</router-link>
+      <router-link to="/RestaurantSignUp">Restaurant Sign Up</router-link>
+    </nav>
+    <nav>
+      <router-link to="/RestaurantLogin">Restaurant Login</router-link>
+    </nav>
   </div>
 </template>
 

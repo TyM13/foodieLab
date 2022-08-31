@@ -17,7 +17,7 @@
       <h3>Password: <input type="text" name="" id="" /></h3>
       <button @click="update_changes">Save Changes</button>
     </section>
-    <router-link to="/DeleteProfile">Delete Account</router-link>
+    <router-link to="/ClientDeleteProfile">Delete Account</router-link>
   </div>
 </template>
 

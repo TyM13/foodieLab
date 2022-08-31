@@ -3,9 +3,11 @@ import VueRouter from 'vue-router'
 import ClientSignUp from "@/views/Client/ClientSignUp"
 import LoginPage from "@/views/Client/LoginPage.vue"
 import ProfilePage from "@/views/Client/ProfilePage.vue"
-import ClientCloseAccount from "@/views/ClientCloseAccount.vue"
+import ClientCloseAccount from "@/views/Client/ClientCloseAccount.vue"
 import RestaurantSignUp from "@/views/Restaurant/RestaurantSignUp.vue"
 import RestaurantLogin from "@/views/Restaurant/RestaurantLogin.vue"
+import RestaurantProfile from "@/views/Restaurant/RestaurantProfile"
+import RestaurantDeleteAccount from "@/views/Restaurant/RestaurantDeleteAccount.vue"
 Vue.use(VueRouter)
 
 const routes = [{
@@ -31,6 +33,14 @@ const routes = [{
 {
   path: "/RestaurantLogin",
   component: RestaurantLogin,
+},
+{
+  path: "/RestaurantProfilePage",
+  component: RestaurantProfile,
+},
+{
+  path: "/RestaurantDeleteAccount",
+  component: RestaurantDeleteAccount,
 }
 ]
 
