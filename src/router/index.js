@@ -5,6 +5,7 @@ import LoginPage from "@/views/Client/LoginPage.vue"
 import ProfilePage from "@/views/Client/ProfilePage.vue"
 import ClientCloseAccount from "@/views/ClientCloseAccount.vue"
 import RestaurantSignUp from "@/views/Restaurant/RestaurantSignUp.vue"
+import RestaurantLogin from "@/views/Restaurant/RestaurantLogin.vue"
 Vue.use(VueRouter)
 
 const routes = [{
@@ -26,6 +27,10 @@ const routes = [{
 {
   path: "/RestaurantSignUp",
   component: RestaurantSignUp,
+},
+{
+  path: "/RestaurantLogin",
+  component: RestaurantLogin,
 }
 ]
 

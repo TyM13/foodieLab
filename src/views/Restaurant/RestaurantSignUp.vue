@@ -7,7 +7,9 @@
 <script>
 import SignUpRestaurant from "@/components/Restaurant/SignUpRestaurant.vue";
 export default {
-  SignUpRestaurant,
+  components: {
+    SignUpRestaurant,
+  },
 };
 </script>
 
