@@ -8,6 +8,7 @@ import RestaurantSignUp from "@/views/Restaurant/RestaurantSignUp.vue"
 import RestaurantLogin from "@/views/Restaurant/RestaurantLogin.vue"
 import RestaurantProfile from "@/views/Restaurant/RestaurantProfile"
 import RestaurantDeleteAccount from "@/views/Restaurant/RestaurantDeleteAccount.vue"
+import DiscoverRestaurantsPage from "@/views/General/DiscoverRestaurantsPage.vue"
 Vue.use(VueRouter)
 
 const routes = [{
@@ -41,7 +42,11 @@ const routes = [{
 {
   path: "/RestaurantDeleteAccount",
   component: RestaurantDeleteAccount,
-}
+},
+{
+  path: "/FindRestaurants",
+  component: DiscoverRestaurantsPage,
+},
 ]
 
 const router = new VueRouter({
