@@ -1,19 +1,24 @@
 <template>
   <div>
     <div v-for="(restaurant, index) in restaurants" :key="index">
-      <img :src="restaurant[`banner_url`]" />
-      <h2 @click="restaurant_clicked">{{ restaurant[`name`] }}</h2>
-      <h2>{{ restaurant[`address`] }}</h2>
-      <h4>{{ restaurant[`bio`] }}</h4>
-      <h4>{{ restaurant[`city`] }}</h4>
-      <h4>{{ restaurant[`phone_number`] }}</h4>
-      <h4>{{ restaurant[`email`] }}</h4>
+      <div @click="restaurant_clicked">
+        <img :src="restaurant[`banner_url`]" />
+        <h2>{{ restaurant[`name`] }}</h2>
+        <h4>{{ restaurant[`bio`] }}</h4>
+      </div>
+      <nav>
+        <h2>{{ restaurant[`address`] }}</h2>
+        <h4>{{ restaurant[`city`] }}</h4>
+        <h4>{{ restaurant[`phone_number`] }}</h4>
+        <h4>{{ restaurant[`email`] }}</h4>
+      </nav>
     </div>
   </div>
 </template>
 
 <script>
 import axios from "axios";
+import cookies from "vue-cookies";
 export default {
   data() {
     return {
@@ -38,7 +43,10 @@ export default {
       });
   },
   methods: {
-    restaurant_clicked() {
+    restaurant_clicked(details) {
+      cookies.get(`restaurant_id`);
+      // response[`data`][`restaurant_id`];
+      details;
       this.$router.push(`/RestaurantPage`);
     },
   },
