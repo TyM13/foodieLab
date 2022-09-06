@@ -1,7 +1,9 @@
 <template>
   <div>
     <div v-for="(restaurant, index) in restaurants" :key="index">
-      <div @click="restaurant_clicked">
+      <div
+        @click="restaurant_clicked(restaurant[`restaurant_id`], restaurant_id)"
+      >
         <img :src="restaurant[`banner_url`]" />
         <h2>{{ restaurant[`name`] }}</h2>
         <h4>{{ restaurant[`bio`] }}</h4>
@@ -43,10 +45,9 @@ export default {
       });
   },
   methods: {
-    restaurant_clicked(details) {
-      cookies.get(`restaurant_id`);
-      // response[`data`][`restaurant_id`];
-      details;
+    restaurant_clicked(restaurant_id) {
+      cookies.set(`restaurant_id`, restaurant_id);
+      restaurant_id;
       this.$router.push(`/RestaurantPage`);
     },
   },
