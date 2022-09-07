@@ -8,8 +8,8 @@
 
 <script>
 import CreateMenuItemsRestaurant from "@/components/Restaurant/Menu/CreateMenuItemsRestaurant.vue";
-// import EditMenuItems from "@/components/Restaurant/Menu/EditMenuItems.vue";
-// import DeleteMenuItems from "@/components/Restaurant/Menu/DeleteMenuItems.vue";
+// import EditMenuItems from "@/components/Restaurant/Menu/EditMenuItems.vue"
+// import DeleteMenuItems from "@/components/Restaurant/Menu/DeleteMenuItems.vue"
 export default {
   components: {
     CreateMenuItemsRestaurant,

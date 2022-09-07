@@ -1,7 +1,10 @@
 <template>
   <div>
     <!--  for loop that goes in restaurant_info [array of obj] and displays the restaurant info in the html based on what's called -->
-    <section v-for="(restaurant, index) in restaurant_info" :key="index">
+    <section
+      v-for="(restaurant, index) in restaurant_info"
+      :key="`restaurant_${index}`"
+    >
       <img :src="restaurant[`banner_url`]" />
       <h2>{{ restaurant[`name`] }}</h2>
       <h4>{{ restaurant[`bio`] }}</h4>

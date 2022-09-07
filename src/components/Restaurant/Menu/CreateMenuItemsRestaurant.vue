@@ -1,6 +1,7 @@
 <template>
   <div>
     <section>
+      <h1>Create new menu item</h1>
       <h3>Item Name<input ref="menu_item_name" type="text" /></h3>
       <h3>Item Image<input ref="menu_item_img" type="url" /></h3>
       <h3>Item Description<input ref="menu_item_description" type="text" /></h3>

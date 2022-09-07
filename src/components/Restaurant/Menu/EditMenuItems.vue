@@ -17,7 +17,7 @@ export default {
           token: Restaurant_token,
         },
         data: {
-          menu_id: number,
+          description: this.$refs[`menu_item_description`][`value`],
         },
       })
       .then((response) => {

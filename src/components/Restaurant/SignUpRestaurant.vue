@@ -39,8 +39,8 @@ export default {
           },
         })
         .then((response) => {
-          cookies.set(`Restaurant_token`, response[`data`][`token`]);
-          cookies.set(`Restaurant_id`, response[`data`][`RestaurantId`]);
+          cookies.set(`restaurant_token`, response[`data`][`token`]);
+          cookies.set(`restaurant_id`, response[`data`][`RestaurantId`]);
           response;
           this.$router.push(`/RestaurantLogin`);
         })
