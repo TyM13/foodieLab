@@ -1,14 +1,14 @@
 <template>
   <div>
-    <menu-items-restaurant></menu-items-restaurant>
+    <create-menu-items-restaurant></create-menu-items-restaurant>
   </div>
 </template>
 
 <script>
-import MenuItemsRestaurant from "@/components/Restaurant/MenuItemsRestaurant.vue";
+import CreateMenuItemsRestaurant from "@/components/Restaurant/Menu/CreateMenuItemsRestaurant.vue";
 export default {
   components: {
-    MenuItemsRestaurant,
+    CreateMenuItemsRestaurant,
   },
 };
 </script>

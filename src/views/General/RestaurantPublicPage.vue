@@ -1,17 +1,14 @@
 <template>
   <div>
     <public-page-restaurant></public-page-restaurant>
-    <menu-items-restaurant></menu-items-restaurant>
   </div>
 </template>
 
 <script>
 import PublicPageRestaurant from "@/components/General/PublicPageRestaurant.vue";
-import MenuItemsRestaurant from "@/components/Restaurant/MenuItemsRestaurant.vue";
 export default {
   components: {
     PublicPageRestaurant,
-    MenuItemsRestaurant,
   },
 };
 </script>
