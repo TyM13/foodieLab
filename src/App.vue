@@ -7,4 +7,20 @@
 
 
 <style lang="scss">
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  width: 100%;
+}
+
+img {
+  width: 300px;
+  height: 250px;
+}
 </style>

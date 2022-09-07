@@ -1,0 +1,3 @@
+hiding/showing links/text only for restauraunt or client or to change depending who's logged in (tokens/id) or should i avoid that
+going to menu page as restaurant when you log in, has restaurant_id but doesn't work. can see it as restaurant and edit it froml there
+menu_id edit menu. multiple different pages 1 just for restaurant so on click of item u can edit vs completely different page for client?

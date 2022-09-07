@@ -29,15 +29,18 @@ export default {
             "x-api-key": "yLAQeEigreLkBVEovDJJ",
           },
           data: {
+            // gets the value of the input usr_email to send as data to the api
             email: this.$refs[`usr_email`][`value`],
             password: this.$refs[`usr_password`][`value`],
           },
         })
         .then((response) => {
+          // sets the token and client_id as a cookie when the client logs in
           cookies.set(`token`, response[`data`][`token`]);
           cookies.set(`client_id`, response[`data`][`client_id`]);
           response;
-          this.$router.push(`/ClientProfilePage`);
+          // automatically redirects to the find restaurants page (RestaurantsDiscoverPage)
+          this.$router.push(`/FindRestaurants`);
         })
         .catch((error) => {
           error;

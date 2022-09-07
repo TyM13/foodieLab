@@ -12,6 +12,7 @@
     <button @click="restaurant_update_changes">Save Changes</button>
     <nav>
       <router-link to="/RestaurantDeleteAccount">Delete Account</router-link>
+      <router-link to="/RestaurantMenu">Edit Menu</router-link>
     </nav>
   </div>
 </template>

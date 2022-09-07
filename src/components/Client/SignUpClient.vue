@@ -2,20 +2,15 @@
   <div>
     <h3 class="user_sign_up">Email:<input ref="user_email" type="text" /></h3>
     <h3 class="user_sign_up">
-      First Name:<input ref="user_fname" type="text" name="" id="" />
+      First Name:<input ref="user_fname" type="text" />
     </h3>
     <h3 class="user_sign_up">
-      Last Name:<input ref="user_lname" type="text" name="" id="" />
+      Last Name:<input ref="user_lname" type="text" />
     </h3>
-    <h3 class="user_sign_up">
-      img_url:<input ref="user_img" type="url" name="" id="" />
-    </h3>
-    <h3 class="user_sign_up">
-      UserName:<input ref="user_name" type="text" name="" id="" />
-    </h3>
-    <h3 class="user_sign_up">
-      Password:<input ref="user_pwd" type="text" name="" id="" />
-    </h3>
+    <h3 class="user_sign_up">img_url:<input ref="user_img" type="url" /></h3>
+    <h3 class="user_sign_up">UserName:<input ref="user_name" type="text" /></h3>
+    <h3 class="user_sign_up">Password:<input ref="user_pwd" type="text" /></h3>
+    <!-- on click it calls the function update_changes -->
     <button @click="user_signup">sign up</button>
   </div>
 </template>
@@ -35,6 +30,7 @@ export default {
             "x-api-key": "yLAQeEigreLkBVEovDJJ",
           },
           data: {
+            // gets the value of the refs to send as data to the api to create a profile
             email: this.$refs[`user_email`][`value`],
             first_name: this.$refs[`user_fname`][`value`],
             last_name: this.$refs[`user_lname`][`value`],
@@ -44,9 +40,11 @@ export default {
           },
         })
         .then((response) => {
+          //when the profile is created it will set the token and client_id as cookies
           cookies.set(`token`, response[`data`][`token`]);
           cookies.set(`client_id`, response[`data`][`client_id`]);
           response;
+          // sends you to the login page
           this.$router.push(`/`);
         })
         .catch((error) => {

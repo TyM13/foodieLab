@@ -1,5 +1,6 @@
 <template>
   <div>
+    <!--  for loop that goes in restaurant_info [array of obj] and displays the restaurant info in the html based on what's called -->
     <section v-for="(restaurant, index) in restaurant_info" :key="index">
       <img :src="restaurant[`banner_url`]" />
       <h2>{{ restaurant[`name`] }}</h2>
@@ -12,6 +13,7 @@
       </nav>
     </section>
     <h1>Menu</h1>
+    <!--  for loop that goes in menu_items [array of obj] and displays the restaurant info in the html based on what's called -->
     <section ref="menu" v-for="(menu_item, index) in menu_items" :key="index">
       <h2>{{ menu_item[`name`] }}</h2>
       <img :src="menu_item[`image_url`]" />
@@ -33,6 +35,7 @@ export default {
   },
 
   mounted() {
+    // gets the cookies restaurant_id (name, value) and sets it as the variable restaurant_id
     let restaurant_id = cookies.get(`restaurant_id`);
     axios
       .request({
@@ -45,6 +48,7 @@ export default {
         },
       })
       .then((response) => {
+        // sets the respone[data] from the api as the existing variable restaurant_info [array] puts info into the array
         this.restaurant_info = response[`data`];
         response;
       })
@@ -63,6 +67,7 @@ export default {
         },
       })
       .then((response) => {
+        // sets the respone[data] from the api as the existing variable menu_items [array] puts info into the array
         this.menu_items = response[`data`];
         response;
       })
