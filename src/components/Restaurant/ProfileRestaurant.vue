@@ -9,14 +9,16 @@
     <h3>profile_url<input ref="restaurant_profile_url" type="url" /></h3>
     <h3>banner_url<input ref="restaurant_banner_url" type="url" /></h3>
     <h3>Password:<input ref="restaurant_password" type="text" /></h3>
+    <!-- on click it calls the function restaurant_update_changes -->
     <button @click="restaurant_update_changes">Save Changes</button>
     <nav>
       <router-link to="/RestaurantDeleteAccount">Delete Account</router-link>
     </nav>
     <create-menu-items-restaurant></create-menu-items-restaurant>
     <public-page-restaurant></public-page-restaurant>
-    <!-- <edit-menu-items></edit-menu-items>
-    <delete-menu-items></delete-menu-items> -->
+
+    <!-- <edit-menu-items></edit-menu-items>-->
+    <!-- <delete-menu-items></delete-menu-items> -->
   </div>
 </template>
 
@@ -24,7 +26,7 @@
 import CreateMenuItemsRestaurant from "@/components/Restaurant/Menu/CreateMenuItemsRestaurant.vue";
 import PublicPageRestaurant from "@/components/General/PublicPageRestaurant.vue";
 // import EditMenuItems from "@/components/Restaurant/Menu/EditMenuItems.vue"
-// import DeleteMenuItems from "@/components/Restaurant/Menu/DeleteMenuItems.vue"
+// import DeleteMenuItems from "@/components/Restaurant/Menu/DeleteMenuItems.vue";
 import axios from "axios";
 import cookies from "vue-cookies";
 export default {
@@ -37,6 +39,7 @@ export default {
 
   methods: {
     restaurant_update_changes() {
+      // gets the cookies Restaurant_token (name, value) and sets it as the variable token_num
       let token_num = cookies.get(`Restaurant_token`);
       axios
         .request({
@@ -48,6 +51,7 @@ export default {
             token: token_num,
           },
           data: {
+            // gets the value of the refs to send as data to the api to change desired info
             email: this.$refs[`restaurant_email`][`value`],
             name: this.$refs[`restaurant_name`][`value`],
             address: this.$refs[`restaurant_address`][`value`],

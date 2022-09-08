@@ -17,14 +17,19 @@
     </section>
     <h1>Menu</h1>
     <!--  for loop that goes in menu_items [array of obj] and displays the restaurant info in the html based on what's called -->
-    <section ref="menu" v-for="(menu_item, index) in menu_items" :key="index">
+    <section
+      ref="menu"
+      v-for="(menu_item, index) in menu_items"
+      :key="index"
+      :post="menu_item"
+    >
       <h2>{{ menu_item[`name`] }}</h2>
       <img :src="menu_item[`image_url`]" />
       <h2>{{ menu_item[`description`] }}</h2>
       <h2>{{ menu_item[`price`] }}</h2>
     </section>
   </div>
-</template>
+</template> 
 
 <script>
 import axios from "axios";
@@ -72,6 +77,7 @@ export default {
       .then((response) => {
         // sets the respone[data] from the api as the existing variable menu_items [array] puts info into the array
         this.menu_items = response[`data`];
+
         response;
       })
       .catch((error) => {

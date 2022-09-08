@@ -3,6 +3,7 @@
 </template>
 
 <script>
+// unfinished code
 import axios from "axios";
 import cookies from "vue-cookies";
 export default {
@@ -16,9 +17,7 @@ export default {
           "x-api-key": `yLAQeEigreLkBVEovDJJ`,
           token: Restaurant_token,
         },
-        data: {
-          description: this.$refs[`menu_item_description`][`value`],
-        },
+        data: {},
       })
       .then((response) => {
         response;

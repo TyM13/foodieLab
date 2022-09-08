@@ -11,7 +11,6 @@ import RestaurantDeleteAccount from "@/views/Restaurant/RestaurantDeleteAccount.
 import DiscoverRestaurantsPage from "@/views/General/DiscoverRestaurantsPage.vue"
 import RestaurantPublicPage from "@/views/General/RestaurantPublicPage.vue"
 import RestaurantCreateMenu from "@/views/Restaurant/RestaurantCreateMenu.vue"
-import RestaurantMenu from "@/views/Restaurant/RestaurantMenu.vue"
 Vue.use(VueRouter)
 
 const routes = [{
@@ -58,10 +57,7 @@ const routes = [{
   path: "/RestaurantCreateMenu",
   component: RestaurantCreateMenu,
 },
-{
-path: "/RestaurantMenu",
-component: RestaurantMenu,
-},
+
 ]
 
 const router = new VueRouter({

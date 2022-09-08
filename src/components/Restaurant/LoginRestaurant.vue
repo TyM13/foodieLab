@@ -30,7 +30,7 @@ export default {
           details;
           // gets the token from response[`data`][`token`] and sets it as the cookie Restaurant_token and the generated token as the value
           cookies.set(`restaurant_token`, response[`data`][`token`]);
-          // gets the restaurantId from response[`data`][`restaurantId`] and sets it as the cookie restaurantId and the generated token as the value
+          // gets the restaurantId from response[`data`][`restaurantId`] and sets it as the cookie restaurantId
           cookies.set(`restaurant_id`, response[`data`][`restaurantId`]);
           // sends you to the RestaurantProfilePage
           this.$router.push(`/RestaurantProfilePage`);

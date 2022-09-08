@@ -17,6 +17,7 @@ import cookies from "vue-cookies";
 export default {
   methods: {
     Create_Menu_Item() {
+      // gets the cookies Restaurant_token (name, value) and sets it as the variable Restaurant_token
       let Restaurant_token = cookies.get(`Restaurant_token`);
       axios
         .request({
@@ -27,6 +28,7 @@ export default {
             token: Restaurant_token,
           },
           data: {
+            // gets the value of the refs to send as data to the api to make a menu item
             description: this.$refs[`menu_item_description`][`value`],
             image_url: this.$refs[`menu_item_img`][`value`],
             name: this.$refs[`menu_item_name`][`value`],
